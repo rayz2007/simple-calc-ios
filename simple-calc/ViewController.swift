@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     var numberInput : String = ""
     var numbers: [Double] = []
     var operation: String = ""
-    
+    var history: [String] = []
 
     @IBAction func press1(_ sender: UIButton) {
         numberInput.append("1");
@@ -167,31 +167,38 @@ class ViewController: UIViewController {
         }
         switch operation {
         case "+":
+            history.append(calcInput + " = " + String(numbers[0] + numbers[1]))
             calcInput = String(numbers[0] + numbers[1])
             numberInput = String(numbers[0] + numbers[1])
             numbers = []
             operation = ""
         case "-":
+            history.append(calcInput + " = " + String(numbers[0] - numbers[1]))
             calcInput = String(numbers[0] - numbers[1])
             numberInput = String(numbers[0] - numbers[1])
             numbers = []
             operation = ""
         case "*":
+            history.append(calcInput + " = " + String(numbers[0] * numbers[1]))
             calcInput = String(numbers[0] * numbers[1])
             numberInput = String(numbers[0] * numbers[1])
             numbers = []
             operation = ""
         case "/":
+            history.append(calcInput + " = " + String(numbers[0] / numbers[1]))
             calcInput = String(numbers[0] / numbers[1])
             numberInput = String(numbers[0] / numbers[1])
             numbers = []
             operation = ""
         case "%":
-            calcInput = String(Int(numbers[0]) % Int(numbers[1]))
+            let mod = Int(numbers[0]) % Int(numbers[1])
+            history.append(calcInput + " = " + String(mod))
+            calcInput = String(mod)
             numberInput = String(Int(numbers[0]) % Int(numbers[1]))
             numbers = []
             operation = ""
         case "count":
+            history.append(calcInput + " = " + String(numbers.count))
             calcInput = String(numbers.count)
             numberInput = String(numbers.count)
             numbers = []
@@ -203,6 +210,7 @@ class ViewController: UIViewController {
                 sum += number
             })
             let avg:Double = sum/total
+            history.append(calcInput + " = " + String(avg))
             calcInput = String(avg)
             numberInput = String(avg)
             numbers = []
@@ -212,6 +220,7 @@ class ViewController: UIViewController {
             for i in 1...Int(numbers[0]){
                 fact *= i
             }
+            history.append(calcInput + " = " + String(fact))
             calcInput = String(fact)
             numberInput = String(fact)
             numbers = []
@@ -230,6 +239,11 @@ class ViewController: UIViewController {
         numberInput = ""
         operation = ""
         numbers = []
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let target = segue.destination as! HistoryViewController
+        target.history = history
     }
 }
 

@@ -12,6 +12,7 @@
 		FE2144F72176F75E00638092 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2144F52176F75E00638092 /* Main.storyboard */; };
 		FE2144F92176F76000638092 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE2144F82176F76000638092 /* Assets.xcassets */; };
 		FE2144FC2176F76000638092 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2144FA2176F76000638092 /* LaunchScreen.storyboard */; };
+		FED351D1217ED10900F52F7F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED351D0217ED10900F52F7F /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		FE2144F82176F76000638092 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE2144FB2176F76000638092 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE2144FD2176F76000638092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FED351D0217ED10900F52F7F /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		FE2144F02176F75E00638092 /* simple-calc */ = {
 			isa = PBXGroup;
 			children = (
+				FED351D0217ED10900F52F7F /* HistoryViewController.swift */,
 				FE2144F12176F75E00638092 /* AppDelegate.swift */,
 				FE2144F32176F75E00638092 /* ViewController.swift */,
 				FE2144F52176F75E00638092 /* Main.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FED351D1217ED10900F52F7F /* HistoryViewController.swift in Sources */,
 				FE2144F42176F75E00638092 /* ViewController.swift in Sources */,
 				FE2144F22176F75E00638092 /* AppDelegate.swift in Sources */,
 			);
